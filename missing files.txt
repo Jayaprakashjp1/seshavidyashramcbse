@@ -1,0 +1,9 @@
+10:58:53 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/glyphicons-halflings-regular.woff2
+10:58:53 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/fontawesome-webfont3e6e.woff2?v=4.7.0
+10:59:01 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/roboto/roboto-regular-webfont.woff2
+10:59:01 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/roboto/roboto-bold-webfont.woff2
+10:59:01 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/roboto/roboto-light-webfont.woff2
+10:59:01 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/poppins/poppins-light-webfont.woff2
+10:59:01 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/poppins/poppins-regular-webfont.woff2
+10:59:01 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/poppins/poppins-semibold-webfont.woff2
+10:59:01 Warning:  File not parsed, looks like binary: seshaschoolssrivi.com/fonts/poppins/poppins-bold-webfont.woff2
