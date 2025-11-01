@@ -119,7 +119,7 @@ aria-expanded="false">
 <div class="fbox-photo"><img src="image/photo-md-5.jpg" alt=""></div>
 <div class="fbox-over"><h3 class="title">School Bus</h3></div></a></div></div></div></div></div></div>
 
-
+<center><h1>Our Gallery</h1></center>
 <!-- Gallery -->
 
 <section class="gallery-slider">
@@ -208,6 +208,106 @@ aria-expanded="false">
 <p><a href="#" class="btn-link focus">More about us</a></p>
 </div></div></div></div><div class="imagebg">
 <img src="image/plx-air-a.jpg" alt=""></div></div>
+
+
+
+<!-- ====================== -->
+<!-- Mission & Vision Section -->
+<!-- ====================== -->
+
+<section class="mission-vision-section">
+  <center><h1>Our Mission & Vision</h1></center>
+
+  <div class="mission-vision-container">
+
+    <div class="mv-card mission-card">
+      <div class="mv-icon">🎯</div>
+      <h3>Mission</h3>
+      <p>
+        Sesha aims at preparing students with skills and knowledge to comprehend, contribute and to succeed in a constantly evolving world. 
+        We strive to ensure that our students develop competencies essential for success. 
+        Imbibing practical and theoretical knowledge for better understanding of the world. 
+        Our students would as an individual, be future contributors towards the local and global communities.
+      </p>
+    </div>
+
+    <div class="mv-card vision-card">
+      <div class="mv-icon">🌟</div>
+      <h3>Vision</h3>
+      <p>
+        To kindle the curiosity in young minds with a thirst for learning.<br>
+        Encourage the children to think independently and become passionate learners.<br>
+        To groom children to become capable, responsible, caring and performing citizens in tomorrow's society.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.mission-vision-section {
+  background: #f8fafc;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.mission-vision-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.mv-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px 30px;
+  width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.mv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.mv-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.mv-card h3 {
+  color: #1565c0;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .mission-vision-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mv-card {
+    width: 90%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+</style>
+
 
 
 <!--Card-->
@@ -334,12 +434,12 @@ aria-expanded="false">
 
 </div>
 
+<!-- ============================= -->
+<!-- Admission Enquiry Popup Form -->
+<!-- ============================= -->
 
-
-
-<!--Alert-->
 <style>
-/* Popup background */
+/* Popup background (blur effect + fade animation) */
 .popup {
   display: flex;
   justify-content: center;
@@ -347,115 +447,201 @@ aria-expanded="false">
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.55);
+  backdrop-filter: blur(5px);
   z-index: 999;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Form box */
+/* Form box with gradient and animation */
 .popup-content {
-  background: #4b68c4;
-  padding: 25px;
-  border-radius: 15px;
-  width: 320px;
+  background: linear-gradient(145deg, #4568dc, #b06ab3);
+  padding: 30px 25px;
+  border-radius: 18px;
+  width: 340px;
   color: white;
   text-align: center;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: "Poppins", Arial, sans-serif;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: slideUp 0.5s ease-in-out;
 }
 
-.popup-content input,
-.popup-content textarea {
+/* Form title */
+.popup-content h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Input fields */
+.popup-content input {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
+  padding: 12px;
+  margin: 10px 0;
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  color: black; /* 👈 This makes typed text black */
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
 }
 
-.popup-content textarea {
-  resize: none;
-  height: 80px;
+.popup-content input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00c9a7;
 }
 
+/* Submit button */
 .popup-content button {
-  background-color: #00bfa5;
+  background: linear-gradient(90deg, #00c9a7, #00a1ff);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   width: 100%;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 17px;
   cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .popup-content button:hover {
-  background-color: #00997e;
+  background: linear-gradient(90deg, #00a1ff, #00c9a7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
+/* Close button */
 .close-btn {
   float: right;
-  font-size: 18px;
+  font-size: 22px;
   cursor: pointer;
   color: white;
+  margin-top: -5px;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ffd700;
+}
+
+/* Disabled state */
+.popup-content button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 </style>
-</head>
-<body>
 
 <!-- Popup -->
 <div class="popup" id="enquiryPopup">
   <div class="popup-content">
     <span class="close-btn" onclick="closePopup()">×</span>
     <h2>Admission Enquiry<br>2025 - 26</h2>
-    <input type="text" id="name" placeholder="Name" required>
-    <input type="text" id="mobile" placeholder="Mobile No" required>
-    <input type="text" id="grade" placeholder="Grade Ex: Nur, LKG" required>
-    <button onclick="sendToWhatsApp()">SUBMIT</button>
+
+    <form id="enquiryForm" onsubmit="submitForm(event)">
+      <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+      <input type="text" name="mobile" id="mobile" placeholder="10-Digit Mobile No" required maxlength="10">
+      <input type="text" name="grade" id="grade" placeholder="Grade Ex: LKG, UKG, I" required>
+      <button type="submit" id="submitBtn">SUBMIT</button>
+    </form>
   </div>
 </div>
 
 <script>
-// Show popup when page loads
+// Show popup on load
 window.onload = function() {
   document.getElementById('enquiryPopup').style.display = 'flex';
-}
+};
 
-// Close popup
 function closePopup() {
   document.getElementById('enquiryPopup').style.display = 'none';
 }
 
-// Send details to WhatsApp
-function sendToWhatsApp() {
-  var name = document.getElementById('name').value;
-  var mobile = document.getElementById('mobile').value;
-  var grade = document.getElementById('grade').value;
-
-  if(name && mobile && grade) {
-    var message = `*Admission Enquiry 2025-26*\nName: ${name}\nMobile: ${mobile}\nGrade: ${grade}`;
-    var whatsappNumber = "917402702040"; // 🔹 Replace with your WhatsApp number
-    var url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  } else {
-    alert("Please fill all fields before submitting.");
+// Validation
+function validateForm(name, mobile, grade) {
+  if (!name || !mobile || !grade) {
+    alert("⚠️ Please fill out all fields.");
+    return false;
   }
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert("⚠️ Please enter a valid 10-digit mobile number.");
+    return false;
+  }
+  return true;
+}
+
+// Submit to Google Sheet
+function submitForm(event) {
+  event.preventDefault();
+
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw_s_eKfat3XCt55ln2eAEyWJAQI64hbc_8ur7u7XD-4wL6jmxXpAd0YfiKWpWlp9nf/exec";
+  const form = document.getElementById("enquiryForm");
+  const submitBtn = document.getElementById("submitBtn");
+
+  const name = form.name.value.trim();
+  const mobile = form.mobile.value.trim();
+  const grade = form.grade.value.trim();
+
+  if (!validateForm(name, mobile, grade)) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+
+  const data = { name, mobile, grade };
+
+  fetch(scriptURL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    alert("✅ Thank you! Your enquiry has been submitted successfully.");
+    form.reset();
+    closePopup();
+  })
+  .catch(err => {
+    alert("❌ Submission failed. Please try again.");
+    console.error("Error:", err);
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "SUBMIT";
+  });
 }
 </script>
 
 
-<!-- Floating Call Button -->
-<a href="tel:+917402702040" class="call-button" title="Call Us">
+<!-- Floating Buttons -->
+<a href="https://wa.me/917402702040" target="_blank" class="floating-btn whatsapp-button" title="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
+</a>
+
+<a href="tel:+917402702040" class="floating-btn call-button" title="Call Us">
   <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Call Icon">
 </a>
 
 <style>
-.call-button {
+/* Common styles for both buttons */
+.floating-btn {
   position: fixed;
-  bottom: 20px;
   right: 20px;
-  background-color: #1aa89d;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -465,20 +651,32 @@ function sendToWhatsApp() {
   align-items: center;
   z-index: 9999;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: bounce 2s infinite ease-in-out; /* 👈 Movement animation */
+  animation: bounce 2s infinite ease-in-out;
 }
 
-.call-button img {
+.floating-btn img {
   width: 30px;
   height: 30px;
 }
 
-.call-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(26,168,157,0.6);
+/* WhatsApp button (Top) */
+.whatsapp-button {
+  bottom: 100px; /* Higher position */
+  background-color: #25D366;
 }
 
-/* ✨ Bounce movement effect */
+/* Call button (Below WhatsApp) */
+.call-button {
+  bottom: 20px;
+  background-color: #1aa89d;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Bounce animation */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -488,6 +686,147 @@ function sendToWhatsApp() {
   }
 }
 </style>
+
+
+<!-- ===================== -->
+<!-- Zigzag Gallery (3 Rows) -->
+<!-- ===================== -->
+<section class="zigzag-gallery">
+  <center><h1>School Activities</h1></center>
+
+  <div class="zigzag-row row1">
+    <img src="Picture/1.jpg" alt="">
+    <img src="Picture/2.jpg" alt="">
+    <img src="Picture/3.jpg" alt="">
+    <img src="Picture/4.jpg" alt="">
+    <img src="Picture/5.jpg" alt="">
+    <img src="Picture/6.jpg" alt="">
+    <img src="Picture/7.jpg" alt="">
+    <img src="Picture/8.jpg" alt="">
+    <img src="Picture/9.jpg" alt="">
+    <img src="Picture/10.jpg" alt="">
+    <img src="Picture/11.jpg" alt="">
+    <img src="Picture/12.jpg" alt="">
+    <img src="Picture/13.jpg" alt="">
+    <img src="Picture/14.jpg" alt="">
+    <img src="Picture/15.jpg" alt="">
+    <img src="Picture/16.jpg" alt="">
+    <img src="Picture/17.jpg" alt="">
+    <img src="Picture/18.jpg" alt="">
+    <img src="Picture/19.jpg" alt="">
+    <img src="Picture/20.jpg" alt="">
+  </div>
+
+  <div class="zigzag-row row2">
+    <img src="Picture/21.jpg" alt="">
+    <img src="Picture/22.jpg" alt="">
+    <img src="Picture/23.jpg" alt="">
+    <img src="Picture/24.jpg" alt="">
+    <img src="Picture/25.jpg" alt="">
+    <img src="Picture/26.jpg" alt="">
+    <img src="Picture/27.jpg" alt="">
+    <img src="Picture/28.jpg" alt="">
+    <img src="Picture/29.jpg" alt="">
+    <img src="Picture/30.jpg" alt="">
+    <img src="Picture/31.jpg" alt="">
+    <img src="Picture/32.jpg" alt="">
+    <img src="Picture/33.jpg" alt="">
+    <img src="Picture/34.jpg" alt="">
+    <img src="Picture/35.jpg" alt="">
+    <img src="Picture/36.jpg" alt="">
+    <img src="Picture/37.jpg" alt="">
+    <img src="Picture/38.jpg" alt="">
+    <img src="Picture/39.jpg" alt="">
+    <img src="Picture/40.jpg" alt="">
+  </div>
+
+  <div class="zigzag-row row3">
+    <img src="Picture/41.jpg" alt="">
+    <img src="Picture/42.jpg" alt="">
+    <img src="Picture/43.jpg" alt="">
+    <img src="Picture/44.jpg" alt="">
+    <img src="Picture/45.jpg" alt="">
+    <img src="Picture/46.jpg" alt="">
+    <img src="Picture/47.jpg" alt="">
+    <img src="Picture/48.jpg" alt="">
+    <img src="Picture/49.jpg" alt="">
+    <img src="Picture/50.jpg" alt="">
+    <img src="Picture/51.jpg" alt="">
+    <img src="Picture/52.jpg" alt="">
+    <img src="Picture/53.jpg" alt="">
+    <img src="Picture/54.jpg" alt="">
+    <img src="Picture/55.jpg" alt="">
+    <img src="Picture/56.jpg" alt="">
+    <img src="Picture/57.jpg" alt="">
+    <img src="Picture/58.jpg" alt="">
+    <img src="Picture/59.jpg" alt="">
+    <img src="Picture/60.jpg" alt="">
+  </div>
+</section>
+
+<style>
+.zigzag-gallery {
+  background: #ffffff;
+  padding: 50px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.zigzag-row {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+  animation: move-left 40s linear infinite;
+}
+
+.zigzag-row img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.zigzag-row img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Alternate directions for zigzag movement */
+.row2 {
+  animation: move-right 45s linear infinite;
+}
+
+.row3 {
+  animation: move-left 50s linear infinite;
+}
+
+/* Animations */
+@keyframes move-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes move-right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .zigzag-row img {
+    width: 160px;
+    height: 220px;
+  }
+
+  .gallery-title {
+    font-size: 1.5rem;
+  }
+}
+</style>
+
 
 
 
