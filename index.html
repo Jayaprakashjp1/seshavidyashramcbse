@@ -19,7 +19,8 @@
 <li><a href="#" class="fa fa-twitter"></a></li><li><a href="#" class="fa fa-linkedin"></a></li></ul>
 <ul class="top-contact clearfix"><li class="t-phone t-phone1">
 <em class="fa fa-phone" style="color: white;" aria-hidden="true"></em><span><a href="tel:7402702040">7402702040</a></span></li>
-<li class="quote-btn"><a href="enquiry.html" class="btn">Enquiry Now</a></li></ul>
+<li class="quote-btn"><a href="enquiry.html" class="btn">Enquiry Now</a></li>
+</ul>
 </div></div></div></div>
 
 <div class="navbar navbar-primary">
@@ -196,18 +197,115 @@ aria-expanded="false">
 
 
 <!-- Content -->
-<div class="section section-contents section-pad">
-<div class="container">
-<div class="content row">
+<style>
+.section-contents {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+}
 
-<div class="row">
-<div class="col-sm-6">
-<h4 class="heading-sm-lead">SESHA</h4>
-<h2 class="heading-lead">Shortly About Us</h2>
-<p>VPMS Selvi Shankar (SESHA) Vidyashram school was started in June 2018. Unlike other conventional schools and orthodox learning, it explores the child's uniqueness' and introduces them to world class platforms of innovation creativity and leadership in education, sports, arts and wellness.</p>
-<p><a href="#" class="btn-link focus">More about us</a></p>
-</div></div></div></div><div class="imagebg">
-<img src="image/plx-air-a.jpg" alt=""></div></div>
+/* Text Section */
+.section-contents .content {
+  flex: 1 1 50%;
+  z-index: 2;
+}
+
+.section-contents h4 {
+  color: #18A5A9;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.section-contents h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.section-contents p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-link.focus {
+  color: #18A5A9;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid #18A5A9;
+  padding-bottom: 3px;
+  transition: 0.3s;
+}
+
+.btn-link.focus:hover {
+  color: #0b6e70;
+  border-color: #0b6e70;
+}
+
+/* Image Section */
+.imagebg {
+  flex: 1 1 50%;
+  text-align: right;
+}
+
+.imagebg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .section-contents {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+
+  .content {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .imagebg {
+    width: 100%;
+    text-align: center;
+  }
+
+  .imagebg img {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+
+<div class="section section-contents section-pad">
+  <div class="container">
+    <div class="content row">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4 class="heading-sm-lead">SESHA</h4>
+          <h2 class="heading-lead">Shortly About Us</h2>
+          <p>VPMS Selvi Shankar (SESHA) Vidyashram school was started in June 2018. Unlike other conventional schools and orthodox learning, it explores the child's uniqueness' and introduces them to world class platforms of innovation creativity and leadership in education, sports, arts and wellness.</p>
+          <p><a href="#" class="btn-link focus">More about us</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="imagebg">
+    <img src="image/plx-air-a.jpg" alt="">
+  </div>
+</div>
 
 
 
@@ -284,7 +382,6 @@ aria-expanded="false">
 }
 
 .mv-card h3 {
-  color: #1565c0;
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 600;

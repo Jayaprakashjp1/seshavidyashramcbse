@@ -77,78 +77,133 @@ aria-expanded="false">
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav></div></div>
-<!-- Content -->
-<div class="section section-contents section-contact section-pad">
-<div class="container">
+<!-- ========================== -->
+<!-- Responsive Certificates & Video Section -->
+<!-- ========================== -->
 
+<section class="section section-contents section-contact section-pad">
+  <div class="container">
 
- 
-  <h3>Building Stablity Certificate</h3>
-<div class="content row">
-<object data="Documents/Building Stablity Certificate.pdf" type="application/pdf" style="width: 100%;
-    height: 1100px;" frameborder="1" scrolling="auto" height="1100" width="850">
-    <iframe src="https://docs.google.com/viewer?url=Mandatory%20Public%20Disclosure.pdf&amp;embedded=true"></iframe>
-</object>
-</div>
+    <!-- Building Stability Certificate -->
+    <center><h1>Building Stability Certificate</h1></center>
+    <div class="pdf-container">
+      <object data="Documents/Building Stablity Certificate.pdf" type="application/pdf"></object>
+    </div>
 
- 
-<br>  
-    <h3>School Building Licence Certificate</h3>
-  <div class="content row">
-<object data="Documents/School Building Licence Certificate.pdf" type="application/pdf" style="width: 100%;
-    height: 1100px;" frameborder="1" scrolling="auto" height="1100" width="850">
-    <iframe src="https://docs.google.com/viewer?url=FORM%20A.pdf&amp;embedded=true"></iframe>
-</object>
-</div>
-  <br>
-      <h3>School Sanitary Certificate</h3>
-  <div class="content row">
-<object data="Documents/School Sanitary CertificatE.pdf" type="application/pdf" style="width: 100%;
-    height: 1100px;" frameborder="1" scrolling="auto" height="1100" width="850">
-    <iframe src="https://docs.google.com/viewer?url=FORM%20D.pdf&amp;embedded=true"></iframe>
-</object>
-</div>
+    <center><h1>School Building Licence Certificate</h1></center>
+    <div class="pdf-container">
+      <object data="Documents/School Building Licence Certificate.pdf" type="application/pdf"></object>
+    </div>
 
+    <center><h1>School Sanitary Certificate</h1></center>
+    <div class="pdf-container">
+      <object data="Documents/School Sanitary CertificatE.pdf" type="application/pdf"></object>
+    </div>
 
-<br>
-  
-    <h3>Fire Certificate Update</h3>
-  <div class="content row">
-<object data="Documents/FIRE NOC 07-10-2025 (NEW).pdf" type="application/pdf" style="width: 100%;
-    height: 1100px;" frameborder="1" scrolling="auto" height="1100" width="850">
-    <iframe src="https://docs.google.com/viewer?url=Renewed%20Fire%20certificate.pdf&amp;embedded=true"></iframe>
-</object>
-</div>
-  
- 
+    <center><h1>Fire Certificate Update</h1></center>
+    <div class="pdf-container">
+      <object data="Documents/FIRE NOC 07-10-2025 (NEW).pdf" type="application/pdf"></object>
+    </div>
 
+    <center><h1>CBSE Inspection</h1></center>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/UqI2vsMufr4" 
+        title="CBSE Inspection Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
 
+  </div>
+</section>
 
+<!-- ========================== -->
+<!-- CSS Styling -->
+<!-- ========================== -->
+<style>
+.section-contact {
+  background: #f9fafc;
+  padding: 60px 15px;
+  font-family: 'Poppins', sans-serif;
+}
 
-   
+/* .section-contact h3 {
+  font-size: 1.6rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+} */
 
+/* PDF container */
+.pdf-container {
+  width: 100%;
+  height: 1000px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
 
-  
-<br>
+.pdf-container object {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
+/* Responsive YouTube Video */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
+}
 
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
-<div class="col-sm-4 col-xs-6">
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .pdf-container {
+    height: 800px;
+  }
 
+  .section-contact h3 {
+    font-size: 1.4rem;
+  }
+}
 
+@media (max-width: 768px) {
+  .pdf-container {
+    height: 600px;
+  }
 
-</div>
-<br>
-<div class="content row"> 
-  
-  <br><br> <h3>CBSC INSPECTION</h3><br>
- <iframe width="100%" height="600px" src="https://www.youtube.com/embed/UqI2vsMufr4" title="YouTube video player" 
-         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- </div>
- 
+  .section-contact {
+    padding: 40px 10px;
+  }
+}
 
-</div>
-</div>
+@media (max-width: 480px) {
+  .pdf-container {
+    height: 450px;
+  }
+
+  .section-contact h3 {
+    font-size: 1.2rem;
+  }
+}
+</style>
 
 
 <!-- Floating Call Button -->
