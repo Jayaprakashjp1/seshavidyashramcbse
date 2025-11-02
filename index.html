@@ -9,8 +9,66 @@
 <link rel="stylesheet" type="text/css" href="css/vendor.bundle.css">
 <link id="style-css" rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+<!-- Social Media Icons (Visible on all mobile views) -->
+<ul class="navbar-social-mobile">
+  <li><a href="https://www.facebook.com/share/17Eknp2R3U/" class="fa fa-facebook"></a></li>
+  <li><a href="https://www.instagram.com/sesha_vidyashram_cbse?igsh=MjZheHRjcG14Y3Ru" class="fa fa-instagram"></a></li>
+  <li><a href="#" class="fa fa-twitter"></a></li>
+  <li><a href="#" class="fa fa-linkedin"></a></li>
+</ul>
+
+<style>
+/* Default: hidden for desktop */
+.navbar-social-mobile {
+  display: none;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+/* Visible on mobile (up to 768px) */
+@media (max-width: 768px) {
+  .navbar-social-mobile {
+    display: flex;
+  }
+
+  .navbar-social-mobile li {
+    display: inline-block;
+  }
+
+  .navbar-social-mobile li a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1aa89d, #00c9a7);
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-social-mobile li a:hover {
+    background: linear-gradient(135deg, #00c9a7, #1aa89d);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+</style>
+
+
 <body class="site-body style-v1"><header class="site-header header-s1 is-sticky">
 <div class="topbar" style="background:#1aa89d"><div class="container"><div class="row">
+
+
+
+  
 <div class="top-aside top-left clearfix hidden-xs">
 <p><strong>Atchankulam Road,Athikulam,Srivilliputtur- 626135</strong></p>
 </div><div class="top-aside top-right clearfix">
@@ -320,7 +378,7 @@ aria-expanded="false">
 
     <div class="mv-card mission-card">
       <div class="mv-icon">🎯</div>
-      <h3>Mission</h3>
+      <h2>Mission</h2>
       <p>
         Sesha aims at preparing students with skills and knowledge to comprehend, contribute and to succeed in a constantly evolving world. 
         We strive to ensure that our students develop competencies essential for success. 
@@ -331,7 +389,7 @@ aria-expanded="false">
 
     <div class="mv-card vision-card">
       <div class="mv-icon">🌟</div>
-      <h3>Vision</h3>
+      <h2>Vision</h2>
       <p>
         To kindle the curiosity in young minds with a thirst for learning.<br>
         Encourage the children to think independently and become passionate learners.<br>
