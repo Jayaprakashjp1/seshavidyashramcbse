@@ -100,6 +100,203 @@ aria-expanded="false">
 <img src="image/banner-life.jpg" alt=""/>
 </div>
 </div>
+
+
+<!-- ============================= -->
+<!-- Admission Enquiry Popup Form -->
+<!-- ============================= -->
+<style>
+/* Popup background (blur + fade-in) */
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.55);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form box with school theme gradient */
+.popup-content {
+  background: linear-gradient(145deg, #1aa89d, #08080873);
+  padding: 30px 25px;
+  border-radius: 18px;
+  width: 340px;
+  color: white;
+  text-align: center;
+  font-family: "Poppins", Arial, sans-serif;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: slideUp 0.5s ease-in-out;
+}
+
+/* Form title */
+.popup-content h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Input fields */
+.popup-content input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.popup-content input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #1aa89d;
+}
+
+/* Submit button */
+.popup-content button {
+  background: linear-gradient(90deg, #1aa89d, #00b5af);
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.popup-content button:hover {
+  background: linear-gradient(90deg, #00b5af, #1aa89d);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Close button */
+.close-btn {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+  margin-top: -5px;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ffd700;
+}
+
+/* Disabled state */
+.popup-content button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; } 
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+
+<!-- Popup -->
+<div class="popup" id="enquiryPopup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <h2>Admission Enquiry<br>2025 - 26</h2>
+
+    <form id="enquiryForm" onsubmit="submitForm(event)">
+      <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+      <input type="text" name="mobile" id="mobile" placeholder="10-Digit Mobile No" required maxlength="10">
+      <input type="text" name="grade" id="grade" placeholder="Grade Ex: LKG, UKG, I" required>
+      <button type="submit" id="submitBtn">SUBMIT</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Show popup on load
+window.onload = function() {
+  document.getElementById('enquiryPopup').style.display = 'flex';
+};
+
+function closePopup() {
+  document.getElementById('enquiryPopup').style.display = 'none';
+}
+
+// Validation
+function validateForm(name, mobile, grade) {
+  if (!name || !mobile || !grade) {
+    alert("⚠️ Please fill out all fields.");
+    return false;
+  }
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert("⚠️ Please enter a valid 10-digit mobile number.");
+    return false;
+  }
+  return true;
+}
+
+// Submit to Google Sheet
+function submitForm(event) {
+  event.preventDefault();
+
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw_s_eKfat3XCt55ln2eAEyWJAQI64hbc_8ur7u7XD-4wL6jmxXpAd0YfiKWpWlp9nf/exec";
+  const form = document.getElementById("enquiryForm");
+  const submitBtn = document.getElementById("submitBtn");
+
+  const name = form.name.value.trim();
+  const mobile = form.mobile.value.trim();
+  const grade = form.grade.value.trim();
+
+  if (!validateForm(name, mobile, grade)) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+
+  const data = { name, mobile, grade };
+
+  fetch(scriptURL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    alert("✅ Thank you! Your enquiry has been submitted successfully.");
+    form.reset();
+    closePopup();
+  })
+  .catch(err => {
+    alert("❌ Submission failed. Please try again.");
+    console.error("Error:", err);
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "SUBMIT";
+  });
+}
+</script>
+
+
 <!-- Content -->
 <div class="section section-contents section-contact section-pad">
 <div class="container">
@@ -181,49 +378,75 @@ Monday-Friday<br>
 </div>
 
 
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/917402702040" target="_blank" class="floating-btn whatsapp-button" title="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
+</a>
+
 <!-- Floating Call Button -->
-<a href="tel:+917402702040" class="call-button" title="Call Us">
+<a href="tel:+917402702040" class="floating-btn call-button" title="Call Us">
   <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Call Icon">
 </a>
 
 <style>
-.call-button {
+/* Common floating button styles */
+.floating-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: #1aa89d;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: bounce 2s infinite ease-in-out; /* 👈 Movement animation */
+  z-index: 9999;
+  animation: bounce 2s infinite ease-in-out;
 }
 
-.call-button img {
+.floating-btn img {
   width: 30px;
   height: 30px;
 }
 
-.call-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(26,168,157,0.6);
+/* WhatsApp button (Left Corner) */
+.whatsapp-button {
+  left: 20px;
+  background: linear-gradient(135deg, #25D366, #1aa89d);
 }
 
-/* ✨ Bounce movement effect */
+/* Call button (Right Corner) */
+.call-button {
+  right: 20px;
+  background: linear-gradient(135deg, #1aa89d, #08080873);
+}
+
+/* Hover Effects */
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* Bounce Animation */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Mobile responsive size */
+@media (max-width: 480px) {
+  .floating-btn {
+    width: 55px;
+    height: 55px;
   }
-  50% {
-    transform: translateY(-10px);
+  .floating-btn img {
+    width: 26px;
+    height: 26px;
   }
 }
 </style>
+
 
 
 
@@ -306,5 +529,7 @@ Srivilliputtur- 626135</p></p>
 </style>
 
 <script src="js/jquery.bundle.js"></script><script src="js/script.js"></script>
+
+
 </body>
 </html>

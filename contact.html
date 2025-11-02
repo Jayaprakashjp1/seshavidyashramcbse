@@ -189,51 +189,74 @@ Monday-Friday<br>
 </div>
 </div>
 
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/917402702040" target="_blank" class="floating-btn whatsapp-button" title="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
+</a>
 
 <!-- Floating Call Button -->
-<a href="tel:+917402702040" class="call-button" title="Call Us">
+<a href="tel:+917402702040" class="floating-btn call-button" title="Call Us">
   <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Call Icon">
 </a>
 
 <style>
-.call-button {
+/* Common floating button styles */
+.floating-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: #1aa89d;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: bounce 2s infinite ease-in-out; /* 👈 Movement animation */
+  z-index: 9999;
+  animation: bounce 2s infinite ease-in-out;
 }
 
-.call-button img {
+.floating-btn img {
   width: 30px;
   height: 30px;
 }
 
-.call-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(26,168,157,0.6);
+/* WhatsApp button (Left Corner) */
+.whatsapp-button {
+  left: 20px;
+  background: linear-gradient(135deg, #25D366, #1aa89d);
 }
 
-/* ✨ Bounce movement effect */
+/* Call button (Right Corner) */
+.call-button {
+  right: 20px;
+  background: linear-gradient(135deg, #1aa89d, #08080873);
+}
+
+/* Hover Effects */
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* Bounce Animation */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Mobile responsive size */
+@media (max-width: 480px) {
+  .floating-btn {
+    width: 55px;
+    height: 55px;
   }
-  50% {
-    transform: translateY(-10px);
+  .floating-btn img {
+    width: 26px;
+    height: 26px;
   }
 }
 </style>
-
 
 
 <footer style="background-color:#1E3449; color:white;" class="pt-5 pb-3 mt-5">

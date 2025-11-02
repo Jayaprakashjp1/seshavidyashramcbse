@@ -534,9 +534,8 @@ aria-expanded="false">
 <!-- ============================= -->
 <!-- Admission Enquiry Popup Form -->
 <!-- ============================= -->
-
 <style>
-/* Popup background (blur effect + fade animation) */
+/* Popup background (blur + fade-in) */
 .popup {
   display: flex;
   justify-content: center;
@@ -550,9 +549,9 @@ aria-expanded="false">
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Form box with gradient and animation */
+/* Form box with school theme gradient */
 .popup-content {
-  background: linear-gradient(145deg, #4568dc, #b06ab3);
+  background: linear-gradient(145deg, #1aa89d, #08080873);
   padding: 30px 25px;
   border-radius: 18px;
   width: 340px;
@@ -588,12 +587,12 @@ aria-expanded="false">
 
 .popup-content input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00c9a7;
+  box-shadow: 0 0 0 2px #1aa89d;
 }
 
 /* Submit button */
 .popup-content button {
-  background: linear-gradient(90deg, #00c9a7, #00a1ff);
+  background: linear-gradient(90deg, #1aa89d, #00b5af);
   color: white;
   border: none;
   padding: 12px;
@@ -608,7 +607,7 @@ aria-expanded="false">
 }
 
 .popup-content button:hover {
-  background: linear-gradient(90deg, #00a1ff, #00c9a7);
+  background: linear-gradient(90deg, #00b5af, #1aa89d);
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
@@ -636,7 +635,8 @@ aria-expanded="false">
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
+  from { opacity: 0; } 
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -644,6 +644,7 @@ aria-expanded="false">
   to { transform: translateY(0); opacity: 1; }
 }
 </style>
+
 
 <!-- Popup -->
 <div class="popup" id="enquiryPopup">
@@ -723,31 +724,30 @@ function submitForm(event) {
   });
 }
 </script>
-
-
-<!-- Floating Buttons -->
+<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/917402702040" target="_blank" class="floating-btn whatsapp-button" title="Chat on WhatsApp">
   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
 </a>
 
+<!-- Floating Call Button -->
 <a href="tel:+917402702040" class="floating-btn call-button" title="Call Us">
   <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Call Icon">
 </a>
 
 <style>
-/* Common styles for both buttons */
+/* Common floating button styles */
 .floating-btn {
   position: fixed;
-  right: 20px;
+  bottom: 20px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 9999;
   animation: bounce 2s infinite ease-in-out;
 }
 
@@ -756,34 +756,42 @@ function submitForm(event) {
   height: 30px;
 }
 
-/* WhatsApp button (Top) */
+/* WhatsApp button (Left Corner) */
 .whatsapp-button {
-  bottom: 100px; /* Higher position */
-  background-color: #25D366;
+  left: 20px;
+  background: linear-gradient(135deg, #25D366, #1aa89d);
 }
 
-/* Call button (Below WhatsApp) */
+/* Call button (Right Corner) */
 .call-button {
-  bottom: 20px;
-  background-color: #1aa89d;
+  right: 20px;
+  background: linear-gradient(135deg, #1aa89d, #08080873);
 }
 
+/* Hover Effects */
 .floating-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-/* Bounce animation */
+/* Bounce Animation */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Mobile responsive size */
+@media (max-width: 480px) {
+  .floating-btn {
+    width: 55px;
+    height: 55px;
   }
-  50% {
-    transform: translateY(-10px);
+  .floating-btn img {
+    width: 26px;
+    height: 26px;
   }
 }
 </style>
-
 
 <!-- ===================== -->
 <!-- Zigzag Gallery (3 Rows) -->

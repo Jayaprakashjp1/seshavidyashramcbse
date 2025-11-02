@@ -78,178 +78,252 @@ aria-expanded="false">
 </ul>
 </nav></div></div>
 <!-- ========================== -->
-<!-- Responsive Certificates & Video Section -->
+<!-- Premium Certificates & Video Section -->
 <!-- ========================== -->
 
-<section class="section section-contents section-contact section-pad">
+<section class="certificates-section">
   <div class="container">
 
-    <!-- Building Stability Certificate -->
-    <center><h1>Building Stability Certificate</h1></center>
-    <div class="pdf-container">
-      <object data="Documents/Building Stablity Certificate.pdf" type="application/pdf"></object>
+    <!-- Title -->
+    <center><h1 class="section-title">Mandatory Certificates</h1></center>
+
+    <!-- Each Certificate Block -->
+    <div class="certificate-card">
+      <h2>Building Stability Certificate</h2>
+      <div class="pdf-view">
+        <iframe src="https://docs.google.com/gview?url=https://seshavidyashramcbse.com/Documents/Building%20Stablity%20Certificate.pdf&embedded=true" frameborder="0"></iframe>
+      </div>
+      <a href="Documents/Building Stablity Certificate.pdf" class="download-btn" target="_blank">Download Certificate</a>
     </div>
 
-    <center><h1>School Building Licence Certificate</h1></center>
-    <div class="pdf-container">
-      <object data="Documents/School Building Licence Certificate.pdf" type="application/pdf"></object>
+    <div class="certificate-card">
+      <h2>School Building Licence Certificate</h2>
+      <div class="pdf-view">
+        <iframe src="https://docs.google.com/gview?url=https://seshavidyashramcbse.com/Documents/School%20Building%20Licence%20Certificate.pdf&embedded=true" frameborder="0"></iframe>
+      </div>
+      <a href="Documents/School Building Licence Certificate.pdf" class="download-btn" target="_blank">Download Certificate</a>
     </div>
 
-    <center><h1>School Sanitary Certificate</h1></center>
-    <div class="pdf-container">
-      <object data="Documents/School Sanitary CertificatE.pdf" type="application/pdf"></object>
+    <div class="certificate-card">
+      <h2>School Sanitary Certificate</h2>
+      <div class="pdf-view">
+        <iframe src="https://docs.google.com/gview?url=https://seshavidyashramcbse.com/Documents/School%20Sanitary%20CertificatE.pdf&embedded=true" frameborder="0"></iframe>
+      </div>
+      <a href="Documents/School Sanitary CertificatE.pdf" class="download-btn" target="_blank">Download Certificate</a>
     </div>
 
-    <center><h1>Fire Certificate Update</h1></center>
-    <div class="pdf-container">
-      <object data="Documents/FIRE NOC 07-10-2025 (NEW).pdf" type="application/pdf"></object>
+    <div class="certificate-card">
+      <h2>Fire Certificate Update</h2>
+      <div class="pdf-view">
+        <iframe src="https://docs.google.com/gview?url=https://seshavidyashramcbse.com/Documents/FIRE%20NOC%2007-10-2025%20(NEW).pdf&embedded=true" frameborder="0"></iframe>
+      </div>
+      <a href="Documents/FIRE NOC 07-10-2025 (NEW).pdf" class="download-btn" target="_blank">Download Certificate</a>
     </div>
 
-    <center><h1>CBSE Inspection</h1></center>
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/UqI2vsMufr4" 
-        title="CBSE Inspection Video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <!-- Video Section -->
+    <div class="certificate-card">
+      <h2>CBSE Inspection Video</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/UqI2vsMufr4" 
+          title="CBSE Inspection Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
 
   </div>
 </section>
 
 <!-- ========================== -->
-<!-- CSS Styling -->
+<!-- Premium CSS Styling -->
 <!-- ========================== -->
 <style>
-.section-contact {
-  background: #f9fafc;
-  padding: 60px 15px;
+.certificates-section {
+  background: linear-gradient(135deg, #f8fbff, #e8f1ff);
+  padding: 80px 20px;
   font-family: 'Poppins', sans-serif;
 }
 
-/* .section-contact h3 {
-  font-size: 1.6rem;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 600;
-} */
-
-/* PDF container */
-.pdf-container {
-  width: 100%;
-  height: 1000px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 50px;
-}
-
-.pdf-container object {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Responsive YouTube Video */
-.video-container {
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #1a1a1a;
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  margin-top: 30px;
+  display: inline-block;
+}
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1aa89d, #2580fe);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
-.video-container iframe {
+.certificate-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 70px;
+  transition: all 0.3s ease-in-out;
+}
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-card h2 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.pdf-view {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.pdf-view iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .pdf-container {
-    height: 800px;
-  }
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #08080873, #1aa89d);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.download-btn:hover {
+  background: linear-gradient(90deg, #1aa89d, #08080873);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
 
-  .section-contact h3 {
-    font-size: 1.4rem;
-  }
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .pdf-view { height: 80vh; }
+  .section-title { font-size: 2rem; }
 }
 
 @media (max-width: 768px) {
-  .pdf-container {
-    height: 600px;
-  }
-
-  .section-contact {
-    padding: 40px 10px;
-  }
+  .pdf-view { height: 75vh; }
+  .certificate-card h2 { font-size: 1.3rem; }
 }
 
 @media (max-width: 480px) {
-  .pdf-container {
-    height: 450px;
-  }
-
-  .section-contact h3 {
-    font-size: 1.2rem;
-  }
+  .pdf-view { height: 70vh; }
+  .section-title { font-size: 1.6rem; }
+  .download-btn { padding: 8px 22px; font-size: 0.9rem; }
 }
 </style>
 
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/917402702040" target="_blank" class="floating-btn whatsapp-button" title="Chat on WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon">
+</a>
 
 <!-- Floating Call Button -->
-<a href="tel:+917402702040" class="call-button" title="Call Us">
+<a href="tel:+917402702040" class="floating-btn call-button" title="Call Us">
   <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Call Icon">
 </a>
 
 <style>
-.call-button {
+/* Common floating button styles */
+.floating-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: #1aa89d;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: bounce 2s infinite ease-in-out; /* 👈 Movement animation */
+  z-index: 9999;
+  animation: bounce 2s infinite ease-in-out;
 }
 
-.call-button img {
+.floating-btn img {
   width: 30px;
   height: 30px;
 }
 
-.call-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(26,168,157,0.6);
+/* WhatsApp button (Left Corner) */
+.whatsapp-button {
+  left: 20px;
+  background: linear-gradient(135deg, #25D366, #1aa89d);
 }
 
-/* ✨ Bounce movement effect */
+/* Call button (Right Corner) */
+.call-button {
+  right: 20px;
+  background: linear-gradient(135deg, #1aa89d, #08080873);
+}
+
+/* Hover Effects */
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* Bounce Animation */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Mobile responsive size */
+@media (max-width: 480px) {
+  .floating-btn {
+    width: 55px;
+    height: 55px;
   }
-  50% {
-    transform: translateY(-10px);
+  .floating-btn img {
+    width: 26px;
+    height: 26px;
   }
 }
 </style>
-
 
 
 
